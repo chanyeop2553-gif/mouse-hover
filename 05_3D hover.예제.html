@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                height: 100vh;
+                background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+            }
+            .hover_wrap {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .effect {
+                width: 400px;
+                height: 266px;
+                margin: 10px;
+                position: relative;
+                perspective: 1000px;
+                /* transform-style: preserve-3d; */
+            }
+            .effect img {
+                display: block;
+                width: 100%;
+            }
+            .effect.front {
+                position: absolute;
+                left: 0;
+                right: 0;
+                z-index: 10;
+                transform-style: preserve-3d;
+            }
+            .effect.back {
+                position: absolute;
+                left: 0;
+                top: 0;
+                transform-style: preserve-3d;
+            }
+            figcaption {
+                width: 80%;
+                padding: 4%;
+                box-sizing: border-box;
+                background-color: rgba(255, 255, 255, 0.5);
+
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                backface-visibility: hidden;
+                transform: (-50%, -50%) translateZ(100px);
+            }
+
+            /* hover1 */
+            .hover1 .front {
+                transform: rotateY(0);
+                transition: all 1s;
+                backface-visibility: hidden;
+                transform: rotateY(0);
+            }
+            .hover1:hover .front {
+                transform: rotateY(180deg);
+            }
+            .hover1 .back {
+                transition: all 1s;
+                backface-visibility: hidden;
+                transform: rotateY(-180deg);
+            }
+
+            .hover1:hover .back {
+                transform: rotateY(0);
+            }
+
+            /* hover2 */
+            .hover2 .front {
+                transform: rotateX(0);
+                transition: all 1s;
+                backface-visibility: hidden;
+            }
+            .hover2:hover .front {
+                transform: rotateX(180deg);
+            }
+            .hover2 .back {
+                transition: all 1s;
+                backface-visibility: hidden;
+                transform: rotateX(-180deg);
+            }
+
+            .hover2:hover .back {
+                transform: rotateX(0);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hover_wrap">
+            <div class="effect hover1">
+                <figure class="front">
+                    <img src="img/sayan-nath-kvyMgooYwgw-unsplash.jpg" alt="" />
+                    <figcaption>
+                        <h3>MOUSE OVER</h3>
+                        <p>마우스 호버효과 앞면입니다.</p>
+                    </figcaption>
+                </figure>
+                <figure class="back">
+                    <img src="img/nir-himi-oUYPvibFtEM-unsplash.jpg" alt="" />
+                    <figcaption>
+                        <h3>MOUSE OVER</h3>
+                        <p>마우스 호버효과 뒷면입니다.</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="effect hover2">
+                <figure class="front">
+                    <img src="img/emd-optics-4qm1EGFaJe4-unsplash.jpg" alt="" />
+                    <figcaption>
+                        <h3>MOUSE OVER</h3>
+                        <p>마우스 호버효과 앞면입니다.</p>
+                    </figcaption>
+                </figure>
+                <figure class="back">
+                    <img src="img/linus-belanger-pQ0b41l-xW8-unsplash.jpg" alt="" />
+                    <figcaption>
+                        <h3>MOUSE OVER</h3>
+                        <p>마우스 호버효과 뒷면입니다.</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </body>
+</html>
